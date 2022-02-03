@@ -8,7 +8,7 @@ namespace CADASTRO_PESSOA_FS1.Classes
         //atributos
         public string nome { get; set; }
 
-        public string endereco { get; set; }
+        public Endereco endereco { get; set; }
         
         public float rendimento { get; set; }
         
