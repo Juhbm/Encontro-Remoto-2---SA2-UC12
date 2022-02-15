@@ -14,5 +14,6 @@ namespace CADASTRO_PESSOA_FS1.Classes
         
         //método
         public abstract float PagarImposto(float rendimento);
+
     }
 }
