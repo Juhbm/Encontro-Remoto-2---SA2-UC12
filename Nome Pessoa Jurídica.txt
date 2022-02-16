@@ -1,0 +1,9 @@
+
+            Nome: Nome Pessoa Jurídica
+            Razão Social: Razão Social Pj LTDA
+            Endereço: Alameda Barão de Limeira, 539
+            Instituição: SENAI Informática
+            Rendimento: R$ 20000,50
+            CNPJ: 11.222.333/0001-44
+            CNPJ válido: True
+            

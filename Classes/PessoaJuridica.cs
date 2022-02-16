@@ -20,14 +20,14 @@ namespace CADASTRO_PESSOA_FS1.Classes
         {
             if (Regex.IsMatch(cnpj, @"(^(\d{2}.\d{3}.\d{3}/\d{4}-\d{2})|(\d{14})$)"))
             {
-                if (cnpj.Length == 18)
+                if (cnpj.Length == 18) //validando com os caracteres . / e -
                 {
                     if (cnpj.Substring(11, 4) == "0001") //substring para validar um trecho da string
                     {
                         return true;
                     }
                 }
-                else if (cnpj.Length == 14)
+                else if (cnpj.Length == 14) //validando sem caracteres, somente números
                 {
                     if (cnpj.Substring(8, 4) == "0001" )
                     {

@@ -10,7 +10,7 @@ namespace CADASTRO_PESSOA_FS1.Classes
 
         public Endereco endereco { get; set; }
         
-        public float rendimento { get; set; }
+        public decimal rendimento { get; set; }
         
         //método
         public abstract float PagarImposto(float rendimento);

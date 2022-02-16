@@ -1,0 +1,9 @@
+
+            Nome: Juliana Barroso
+            Data de Nascimento: 01/01/1987
+            CPF: 123.456.789-01
+            Endereço: Alameda Barão de Limeira, 539
+            Escola: SENAI Informática
+            Rendimento: R$ 4500,50
+            Maior de idade: True
+            
