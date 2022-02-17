@@ -38,12 +38,12 @@ namespace CADASTRO_PESSOA_FS1.Classes
 
                 if (anos >= 18)
                 {
-                    Console.WriteLine($"\nData de Nascimento: {dataConvertida}");
+                    // Console.WriteLine($"\nData de Nascimento: {dataConvertida}");
                     return true;
                 }
-                Console.WriteLine(@$"
-                Data de Nascimento: {dataConvertida}
-                ");
+                // Console.WriteLine(@$"
+                // Data de Nascimento: {dataConvertida}
+                // ");
                 return false;
             }
 
