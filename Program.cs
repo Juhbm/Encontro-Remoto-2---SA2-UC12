@@ -1,7 +1,9 @@
 ﻿using System;
 using CADASTRO_PESSOA_FS1.Classes;
 using System.IO; //necessária para o StreamWrite utilizado na criação dos arquivos .txt
-using System.Threading;
+using System.Threading; //necessária para o Thread.sleep
+
+// *** Enc. Remoto 5 *** 
 
 Console.WriteLine(@$"
 ============================================================
@@ -10,7 +12,7 @@ Console.WriteLine(@$"
 ============================================================
 ");
 
-BarraAçao("Carregando ", 1500); //código definido após o final do "do-while" no static
+BarraAcao("Carregando ", 2000); //código definido após o final do "do-while" no static
 
 string opcao; //precisa ser definida anteriormente para ser usada na estrut de repetição do while
 
@@ -42,7 +44,7 @@ do
             novaPf.nome = "Juliana Barroso";
             novaPf.dataNascimento = "01/01/1987";
             novaPf.cpf = "123.456.789-01";
-            novaPf.rendimento = 4500.50m;
+            novaPf.rendimento = 6500.00f;
 
             novoEnd.logradouro = "Alameda Barão de Limeira";
             novoEnd.numero = 539;
@@ -59,8 +61,11 @@ do
             CPF: {novaPf.cpf}
             Endereço: {novaPf.endereco.logradouro}, {novaPf.endereco.numero}
             Escola: {novoEnd.complemento}
-            Maior de idade: {metodoPf.ValidarDataNascimento(novaPf.dataNascimento)}
-            ");
+            Maior de idade: {(metodoPf.ValidarDataNascimento(novaPf.dataNascimento) ? "SIM" : "NÃO")} 
+            Taxa de IR a ser paga é: {metodoPf.PagarImposto(novaPf.rendimento).ToString("C")}
+            "); // ***  o ?: (if ternário) e a taxa de IR é referente ao Enc. Remoto 6 ***
+            
+
 
             Console.WriteLine($"'Enter' para continuar...");
             Console.ReadLine();
@@ -77,7 +82,7 @@ do
             novaPj.nome = "Nome Pessoa Jurídica";
             novaPj.cnpj = "11.222.333/0001-44";
             novaPj.razaoSocial = "Razão Social Pj LTDA";
-            novaPj.rendimento = 20000.50m;
+            novaPj.rendimento = 28000.50f;
 
             novoEndPj.logradouro = "Alameda Barão de Limeira";
             novoEndPj.numero = 539;
@@ -94,8 +99,9 @@ do
             Endereço: {novoEndPj.logradouro}, {novoEndPj.numero}
             Instituição: {novoEndPj.complemento}
             CNPJ: {novaPj.cnpj}
-            CNPJ válido: {metodoPj.ValidarCnpj(novaPj.cnpj)}
-            ");
+            CNPJ válido: {(metodoPj.ValidarCnpj(novaPj.cnpj) ? "SIM" : "NÃO")}
+            Taxa de IR a ser paga é: {metodoPj.PagarImposto(novaPj.rendimento).ToString("C")}
+            "); // ***  o ?: (if ternário) e a taxa de IR é referente ao Enc. Remoto 6 ***
 
             Console.WriteLine($"'Enter' para continuar...");
             Console.ReadLine();
@@ -107,7 +113,7 @@ do
             Console.Clear();
             Console.WriteLine($"    Obrigado por utilizar nosso Sistema!\n");
 
-            BarraAçao("         Finalizando ", 500);
+            BarraAcao("         Finalizando ", 500);
 
             break;
 
@@ -115,14 +121,14 @@ do
             Console.Clear();
             Console.WriteLine($"    Opção inválida! Por favor, verifique as opções do menu.\n");
 
-            BarraAçao("         Voltando ao menu ", 1200);
+            BarraAcao("         Voltando ao menu ", 1200);
 
             break;
     }
 
 } while (opcao != "0");
 
-static void BarraAçao(string texto, int tempo) //criando uma função static para definir configurações da barra de carregamento
+static void BarraAcao(string texto, int tempo) //criando uma função static para definir configurações da barra de carregamento
 {
             // Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -158,7 +164,7 @@ static void BarraAçao(string texto, int tempo) //criando uma função static pa
 //             novaPf.nome = "Juliana Barroso";
 //             novaPf.dataNascimento = "01/01/1987";
 //             novaPf.cpf = "123.456.789-01";
-//             novaPf.rendimento = 4500.50m;
+//             novaPf.rendimento = 4500.50f;
 
 //             novoEnd.logradouro = "Alameda Barão de Limeira";
 //             novoEnd.numero = 539;
@@ -195,7 +201,7 @@ static void BarraAçao(string texto, int tempo) //criando uma função static pa
 //             novaPj.nome = "Nome Pessoa Jurídica";
 //             novaPj.cnpj = "11.222.333/0001-44";
 //             novaPj.razaoSocial = "Razão Social Pj LTDA";
-//             novaPj.rendimento = 20000.50m;
+//             novaPj.rendimento = 20000.50f;
 
 //             novoEndPj.logradouro = "Alameda Barão de Limeira";
 //             novoEndPj.numero = 539;

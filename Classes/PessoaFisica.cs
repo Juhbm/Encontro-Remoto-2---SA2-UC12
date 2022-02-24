@@ -50,9 +50,26 @@ namespace CADASTRO_PESSOA_FS1.Classes
             return false;
         }
 
+        // *** Enc. Remoto 6 ***
         public override float PagarImposto(float rendimento) //override vai dizer que o método deve ser subrescrito
         {
-            throw new NotImplementedException();
+            if (rendimento <= 1500)
+            {
+                return 0;
+            }
+            else if (rendimento > 1500 && rendimento <= 3500) //usar else if porque ainda está validando a variável rendimento
+            {
+                return (rendimento / 100) * 2;
+            }
+            else if (rendimento > 3500 && rendimento < 6000)
+            {
+                return (rendimento / 100) * 3.5f;
+            }
+            else
+            {
+                return (rendimento / 100) * 5;
+            }
+
         }
 
         public bool ValidarDataNascimento(DateTime dataNasc)
